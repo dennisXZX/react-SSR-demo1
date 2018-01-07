@@ -19,10 +19,93 @@ PM2 is used for production process management.
 
 #### Install Babel on the server
 
-Babel is needed on the server side since we are using server side rendering, so the server needs to understand JSX or other ES6 syntax. Babel and its presents are installed as dependencies instead of dev dependencies, this is because our goal is to push the source code onto production server and compile them on the server.
+Babel is needed on the server side since we are using server side rendering, so the server needs to understand JSX or other ES6 syntax. Babel and its presets are installed as dependencies instead of dev dependencies, this is because our goal is to push the source code onto production server and compile them on the server.
+
+#### Server side rendering
+
+`ReactDOMServer.renderToString(element)` enables you to render components to static markup.
+
+```js
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+
+import App from './components/App';
+
+const serverRender = () => {
+  return ReactDOMServer.renderToString(
+    <App />
+  );
+};
+
+export default serverRender;
+```
 
 #### Jest
 
 Run `yarn test` to run tests.
 
-Jest is used for unit testing.
+Unit testing to test API methods.
+
+```js
+import DataApi from '../DataApi';
+import { data } from '../testData';
+
+const api = new DataApi(data);
+
+describe('DataApi', () => {
+  it('should expose articles as an object', () => {
+    const articles = api.getArticles();
+    const articleId = data.articles[0].id;
+    const articleTitle = data.articles[0].title;
+
+    expect(articles).toHaveProperty(articleId);
+    expect(articles[articleId].title).toBe(articleTitle);
+  });
+
+  it('should expose authors as an object', () => {
+    const authors = api.getAuthors();
+    const authorId = data.authors[0].id;
+    const authorFirstName = data.authors[0].firstName;
+
+    expect(authors).toHaveProperty(authorId);
+    expect(authors[authorId].firstName).toBe(authorFirstName);
+  });
+});
+```
+
+Snapshot testing to test React component tree
+
+```js
+import React from 'react';
+import ArticleList from '../ArticleList';
+
+import renderer from 'react-test-renderer';
+
+describe('ArticleList', () => {
+
+  // prepare the props for the component
+  const testProps = {
+    articles: {
+      articleA: { id: 'articleA' },
+      articleB: { id: 'articleB' }
+    },
+    articleActions: {
+      lookupAuthor: jest.fn(() => ({}))
+    }
+  }
+
+  it('should render correctly', () => {
+    // create a component tree
+    const tree = renderer.create(
+      <ArticleList
+        {...testProps}
+      />
+    ).toJSON();
+
+    expect(tree.children.length).toBe(2);
+
+    // create a snapshot
+    expect(tree).toMatchSnapshot();
+  })
+})
+```
