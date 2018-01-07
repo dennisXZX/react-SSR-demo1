@@ -1633,15 +1633,15 @@ eval("/**\n * Copyright (c) 2013-present, Facebook, Inc.\n *\n * This source cod
 
 /***/ }),
 /* 139 */
-/*!******************************************************!*\
-  !*** multi babel-polyfill ./lib/components/Index.js ***!
-  \******************************************************/
+/*!*********************************************************!*\
+  !*** multi babel-polyfill ./lib/renderers/domRender.js ***!
+  \*********************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! babel-polyfill */140);
-module.exports = __webpack_require__(/*! ./lib/components/Index.js */342);
+module.exports = __webpack_require__(/*! ./lib/renderers/domRender.js */342);
 
 
 /***/ }),
@@ -3934,15 +3934,15 @@ eval("module.exports = function (regExp, replace) {\n  var replacer = replace ==
 
 /***/ }),
 /* 342 */
-/*!*********************************!*\
-  !*** ./lib/components/Index.js ***!
-  \*********************************/
+/*!************************************!*\
+  !*** ./lib/renderers/domRender.js ***!
+  \************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _react = __webpack_require__(/*! react */ 47);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ 346);\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _App = __webpack_require__(/*! ./App */ 355);\n\nvar _App2 = _interopRequireDefault(_App);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n_reactDom2.default.hydrate(_react2.default.createElement(_App2.default, null), document.getElementById('root'));//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMzQyLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL2xpYi9jb21wb25lbnRzL0luZGV4LmpzPzI0ZjQiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IFJlYWN0RE9NIGZyb20gJ3JlYWN0LWRvbSc7XG5cbmltcG9ydCBBcHAgZnJvbSAnLi9BcHAnO1xuXG5SZWFjdERPTS5oeWRyYXRlKFxuICA8QXBwIC8+LFxuICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncm9vdCcpXG4pO1xuXG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIGxpYi9jb21wb25lbnRzL0luZGV4LmpzIl0sIm1hcHBpbmdzIjoiOztBQUFBO0FBQ0E7OztBQUFBO0FBQ0E7OztBQUNBO0FBQ0E7Ozs7O0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///342\n");
+eval("\n\nvar _react = __webpack_require__(/*! react */ 47);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ 346);\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _App = __webpack_require__(/*! ../components/App */ 355);\n\nvar _App2 = _interopRequireDefault(_App);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n_reactDom2.default.hydrate(_react2.default.createElement(_App2.default, null), document.getElementById('root'));//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMzQyLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL2xpYi9yZW5kZXJlcnMvZG9tUmVuZGVyLmpzP2NhYTAiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IFJlYWN0RE9NIGZyb20gJ3JlYWN0LWRvbSc7XG5cbmltcG9ydCBBcHAgZnJvbSAnLi4vY29tcG9uZW50cy9BcHAnO1xuXG5SZWFjdERPTS5oeWRyYXRlKFxuICA8QXBwIC8+LFxuICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncm9vdCcpXG4pO1xuXG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIGxpYi9yZW5kZXJlcnMvZG9tUmVuZGVyLmpzIl0sIm1hcHBpbmdzIjoiOztBQUFBO0FBQ0E7OztBQUFBO0FBQ0E7OztBQUNBO0FBQ0E7Ozs7O0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///342\n");
 
 /***/ }),
 /* 343 */
