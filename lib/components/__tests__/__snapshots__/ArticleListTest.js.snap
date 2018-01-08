@@ -27,7 +27,9 @@ Array [
           "fontSize": "0.85em",
         }
       }
-    />
+    >
+      Invalid Date
+    </div>
     <div
       style={
         Object {
@@ -75,7 +77,9 @@ Array [
           "fontSize": "0.85em",
         }
       }
-    />
+    >
+      Invalid Date
+    </div>
     <div
       style={
         Object {
