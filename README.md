@@ -4,7 +4,7 @@ Powered by React, Express, EJS
 
 #### Steps
 - run `yarn install` to install dependencies
-- run `yarn dev` to run the app server
+- run `yarn dev` to run the app server (run `yarn pm2 delete all` to shut down the server)
 - default port: localhost:8080
 
 #### PM2
