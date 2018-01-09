@@ -73,39 +73,41 @@ describe('DataApi', () => {
 });
 ```
 
-Snapshot testing to test React component tree
+Snapshot testing to test React component
 
 ```js
 import React from 'react';
 import ArticleList from '../ArticleList';
+import Article from '../Article';
 
-import renderer from 'react-test-renderer';
+import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
 
 describe('ArticleList', () => {
+  let wrapper;
+
+  // shallow render the component before testing
+  beforeEach(() => {
+    wrapper = shallow(<ArticleList {...testProps} />);
+  });
 
   // prepare the props for the component
   const testProps = {
     articles: {
       articleA: { id: 'articleA' },
       articleB: { id: 'articleB' }
-    },
-    articleActions: {
-      lookupAuthor: jest.fn(() => ({}))
     }
   }
 
-  it('should render correctly', () => {
-    // create a component tree
-    const tree = renderer.create(
-      <ArticleList
-        {...testProps}
-      />
-    ).toJSON();
+  Article.propTypes = {};
 
-    expect(tree.children.length).toBe(2);
+  it('should render correctly', () => {
+    expect(wrapper.find(Article)).toHaveLength(2);
 
     // create a snapshot
-    expect(tree).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   })
 })
 ```
